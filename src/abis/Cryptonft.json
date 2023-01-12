@@ -17,7 +17,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -30,7 +31,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/cryptoNfts.sol\":\"Cryptonft\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/ERC721Connector.sol\":{\"keccak256\":\"0xe7dd203e11c83b4ad09285ea3301a620c5cdf3e28048521ac6d48a2c5c44aa62\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a9b6dcbd4c110fea1a9bb8a2f5ffdb1705338c8d8ce781aaf0fe2342bf7933df\",\"dweb:/ipfs/QmQ4XDYRJuUgzNSRCRzPYZEttrpXExTTwhLQwWW4Fqiogy\"]},\"project:/src/contracts/ERC721Metadata.sol\":{\"keccak256\":\"0x58797fe8b3b04722bd443b42aa57b393871ff462ea1f47d23dd2f87f6ca6e78c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5bc7767e1a3f27be9d0db216d1e5b2fc7798619b2cedc2f0107b6821eb5edb4\",\"dweb:/ipfs/QmaHVn7VyJDSrD8sKqQQBJpoH86fEnkKeRnYdo5AfbAxHp\"]},\"project:/src/contracts/cryptoNfts.sol\":{\"keccak256\":\"0x5f836bd53035f9512c4d4a33ea638c2cb3dd4104a47707646107cf74c259274c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9ac7d2f19caeda5d16befa85d4f3e55b775907cbda78c8a1dc92be14e9a376b8\",\"dweb:/ipfs/QmV4oAwYAmDH5KNcN9wHR55ayxSCuRQV9mnd18mwEYGPvE\"]}},\"version\":1}",
@@ -3136,12 +3138,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xdA7A2081b2F79e1978dE92A5b3315A45332f2A64",
-      "transactionHash": "0x06a640fa4d05016076df745464740d01725527f9c5919b08cea99ca75db1a1e5"
+      "address": "0x5Dac811ED3Ace738b20ed091D1779025CB7E5e99",
+      "transactionHash": "0x984e3ba839dcb0cd622b9973e05209cdb7fd4cb3288de97746b4a8e68d482d4e"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-01-12T12:39:30.821Z",
+  "updatedAt": "2023-01-12T13:02:26.862Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
