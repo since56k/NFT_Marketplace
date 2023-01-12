@@ -13,6 +13,12 @@ pragma solidity ^0.8.0;
 
 contract ERC721 {
 
+    event Transfer(
+        address indexed from,
+        address indexed to,
+        uint256 indexed tokenId
+    );
+
     //mapping from token id to the owner
     //everything should be private
     mapping(uint256 => address) private _tokenOwner; 
@@ -38,6 +44,7 @@ contract ERC721 {
     // keeping track of each address that is minting and adding one to the count 
         _ownedTokensCount[to] += 1;
 
+        emit Transfer(addres(0), to, tokenId);
     }
 
 }
