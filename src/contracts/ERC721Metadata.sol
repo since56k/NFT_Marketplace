@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract ERCMetadata {
+contract ERC721Metadata {
 
     string private _name;
     string private _symbol;
