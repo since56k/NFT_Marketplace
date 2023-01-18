@@ -13,6 +13,7 @@ contract Cryptonft is ERC721Connector {
     mapping(string => bool) _cryptoNftsExists;
 
     function mint(string memory _cryptoNft) public {
+        require(!_cryptoNftsExists[_cryptoNft], 'Error - Cryptonft already exist');
         cryptoNfts.push(_cryptoNft);
         uint _id = cryptoNfts.length - 1;
 
