@@ -44,7 +44,7 @@ contract ERC721 {
     // keeping track of each address that is minting and adding one to the count 
         _ownedTokensCount[to] += 1;
 
-        emit Transfer(addres(0), to, tokenId);
+        emit Transfer(address(0), to, tokenId);
     }
 
 }
