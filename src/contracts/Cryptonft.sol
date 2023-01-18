@@ -5,7 +5,7 @@ import "./ERC721Connector.sol";
 
 //initialize this contract to inherit name and symbol from erc721metadata 
 
-contract Cryptonft is ERC721Connector {
+contract CryptoNft is ERC721Connector {
 
     //array to store nfts
     string[] public cryptoNfts;
