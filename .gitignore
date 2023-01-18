@@ -1,6 +1,5 @@
 .DS_Store
-.vscode
-# dependencies
 /node_modules
 /src/collections
 /src/abis
+/vscode
