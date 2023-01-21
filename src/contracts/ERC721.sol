@@ -26,13 +26,16 @@ contract ERC721 {
     //mapping from owner to number of owned token
     mapping(address => uint256) private _ownedTokensCount; 
 
+    //mapping from token Id to approved address
+    mapping(uint256 => address) private _tokenApprovals;
+
 
     /// @notice Count all NFTs assigned to an owner
     /// @dev NFTs assigned to the zero address are considered invalid, and this
     ///  function throws for queries about the zero address.
     /// @param _owner An address for whom to query the balance
     /// @return The number of NFTs owned by `_owner`, possibly zero
-    function balanceOf(address _owner) external view returns (uint256) {
+    function balanceOf(address _owner) public view returns (uint256) {
         require (_owner != address(0), 'owner query for non existent token'); 
         return _ownedTokensCount[_owner];
     }
@@ -42,7 +45,7 @@ contract ERC721 {
     ///  about them do throw.
     /// @param _tokenId The identifier for an NFT
     /// @return The address of the owner of the NFT
-    function ownerOf(uint256 _tokenId) external view returns (address){
+    function ownerOf(uint256 _tokenId) public view returns (address){
         address owner = _tokenOwner[_tokenId];
         require (owner != address(0), 'owner query for non existent token');
         return owner;
@@ -69,8 +72,6 @@ contract ERC721 {
     }
 
     /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE
-    ///  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE
-    ///  THEY MAY BE PERMANENTLY LOST
     /// @dev Throws unless `msg.sender` is the current owner, an authorized
     ///  operator, or the approved address for this NFT. Throws if `_from` is
     ///  not the current owner. Throws if `_to` is the zero address. Throws if
@@ -78,9 +79,28 @@ contract ERC721 {
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
-    function transferFrom(address _from, address _to, uint256 _tokenId) external payable{
+    /// Iternal for private informations
+    function _transferFrom(address _from, address _to, uint256 _tokenId) internal {
+        //require address receving the token is not zero
+        require(_to != address(0), 'error - ERC7211 transfer to the zero addresss');
 
-        
+        //require address trasfering the token actually owns the token
+        require(ownerOf(_tokenId) == _from, 'Trying to transfer a token the address does not own');
+
+        //update the balance of the address _from token
+        _ownedTokensCount[_from] -=1;
+
+        //update the balance of the address _to
+        _ownedTokensCount[_to] +=1;
+
+        //add tokenId to the address receiving the token
+        _tokenOwner[_tokenId] = _to;
+
+        emit Transfer(_from, _to, _tokenId);
+    }
+
+    function transferFrom(address _from, address _to, uint256 _tokenId) public {
+        _transferFrom(_from, _to, _tokenId);
     }
 
 }
